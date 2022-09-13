@@ -14,7 +14,9 @@ body {
   line-height: 1.2;
   font-family: $bodyFont;
   font-size: $font-medium;
+  background: linear-gradient(rgba(21, 29, 41, 0.848), rgb(23, 26, 31));
   color: $white;
+  height: 1000px;
 }
 
 h1,
@@ -30,8 +32,27 @@ h6 {
 // helper classes 
 .container {
   margin: 0 1.313rem;
+
+  @include breakpoints-up(med) {
+    margin: 0 10.438rem;
+  }
 }
+
+.hide-for-mobile {
+  display: none;
+}
+
+.hide-for-desktop {
+  display: none;
+}
+
+.translate-x {
+  transform: translateX(0) !important;
+}
+
+
 
 a {
   text-decoration: underline dotted;
+  color: $black;
 }

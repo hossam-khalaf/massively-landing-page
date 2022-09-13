@@ -1,14 +1,19 @@
 .hero {
   position: relative;
-  background-image: linear-gradient(rgba(16, 14, 14, 0.848), rgb(31, 23, 23)), url(../../img/bg.jpg);
+  background-image: linear-gradient(rgba(21, 29, 41, 0.848), rgb(23, 26, 31)), url(../../img/bg.jpg);
   min-height: 90vh;
   background-size: 350% 180%;
   background-position: top center;
 
+  @include breakpoints-up(med) {
+    min-height: 100vh;
+    background-size: cover;
+  }
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 
 
   .nav {
@@ -16,8 +21,16 @@
     top: 1rem;
     right: 1.063rem;
 
+    @include breakpoints-up(med) {
+      order: 3;
+      position: static;
+      background-color: transparent;
+
+      width: 80%;
+    }
+
     &__menu {
-      // display: block;
+      transform: translateX(100%);
       color: $black;
       position: fixed;
       top: 0;
@@ -25,15 +38,25 @@
       bottom: 0;
       left: 30%;
       text-align: left;
-
-
+      transition: transform 300ms ease-in-out;
       background-color: $white;
       list-style: none;
       box-shadow: -8px 10px 28px -7px rgba(0, 0, 0, 0.38);
       -webkit-box-shadow: -8px 10px 28px -7px rgba(0, 0, 0, 0.38);
       -moz-box-shadow: -8px 10px 28px -7px rgba(0, 0, 0, 0.38);
 
+      @include breakpoints-up(med) {
+        transform: translateX(0);
+        position: static;
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+        background-color: transparent;
+
+      }
     }
+
+
 
     &__item {
 
@@ -42,22 +65,79 @@
 
       &:not(:last-of-type) {
         border-bottom: 2px solid $lightGray;
+
+        @include breakpoints-up(med) {
+          border: none;
+        }
+      }
+
+
+
+      @include breakpoints-up(med) {
+        margin: 0;
+        padding: 2.5rem 1rem;
+
+        &:first-of-type {
+          background: $white;
+
+          a {
+            color: $black;
+          }
+        }
+
       }
 
     }
 
     &__link {
-      color: $black;
+      // color: $black;
       text-transform: uppercase;
       text-decoration: none;
       font-family: $headingFont;
       font-weight: bolder;
       font-size: $font-medium;
+
+      &:hover {
+        color: $veryDarkerBlue;
+      }
+
+      @include breakpoints-up(med) {
+        color: $white;
+
+
+
+        &:hover {
+          color: $white;
+        }
+
+      }
     }
 
     &__social {
       margin: 2rem;
       display: flex;
+
+      @include breakpoints-up(med) {
+        margin-left: auto;
+      }
+
+      a {
+        text-decoration: none;
+        color: $black;
+
+        @include breakpoints-up(med) {
+          color: $white;
+        }
+
+        &:hover {
+          color: $veryDarkerBlue;
+          transform: scale(1.07);
+
+          @include breakpoints-up(med) {
+            color: $white;
+          }
+        }
+      }
 
       i {
         display: flex;
@@ -69,27 +149,42 @@
         border: 2px solid $lightGray;
         padding: .9rem;
         margin-right: .7rem;
+
+        @include breakpoints-up(med) {
+          border: none;
+        }
       }
     }
 
     .close {
       text-align: right;
       padding: 1rem 1rem 0 0;
+      cursor: pointer;
 
       i {
         font-size: large;
         color: $gray;
 
       }
+
+      @include breakpoints-up(med) {
+        display: none;
+      }
     }
 
 
 
     &__menu--button {
-      display: none;
+
+      @include breakpoints-up(med) {
+        display: none;
+      }
+
+      cursor: pointer;
       font-family: $headingFont;
       font-size: $font-small;
       font-weight: bold;
+      user-select: none;
 
       i {
         margin-right: 0.5rem;
@@ -117,6 +212,21 @@
       a {
         color: $white;
       }
+    }
+  }
+
+  .arrow-down {
+    display: none;
+
+    @include breakpoints-up(med) {
+      display: grid;
+      place-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: transparent;
+      border: 2px solid $white;
+      margin-bottom: 4rem;
     }
   }
 }
