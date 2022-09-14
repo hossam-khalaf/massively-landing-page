@@ -1,0 +1,89 @@
+.about {
+  background-color: $white;
+  color: $black;
+  text-align: center;
+
+  @include breakpoints-up(med) {
+    padding: 0 5.938rem 2rem 5.938rem;
+  }
+
+  .date {
+    display: block;
+    margin: 0 auto;
+    padding-top: 2.063rem;
+    position: relative;
+    width: 400px;
+
+    @include breakpoints-up(med) {
+      padding-top: 4rem;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 2.5rem;
+      left: 1rem;
+      width: 5rem;
+      height: 2px;
+      background: $lightGray;
+
+      @include breakpoints-up(med) {
+        top: 4.5rem;
+      }
+
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 2.5rem;
+      right: 1rem;
+      width: 5rem;
+      height: 2px;
+      background: $lightGray;
+
+      @include breakpoints-up(med) {
+        top: 4.5rem;
+      }
+    }
+  }
+
+  h1 {
+    font-size: clamp($font-xxlarge, 7vw, $font-xxxlarge);
+    text-transform: uppercase;
+    margin-top: 1.813rem;
+    color: $veryDarkerBlue;
+  }
+
+  p {
+    line-height: 2;
+    margin: 1.563rem 0;
+    font-family: $bodyFont;
+
+    @include breakpoints-up(lg) {
+      padding: 0 6rem;
+    }
+  }
+
+  img {
+    display: block;
+  }
+
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: $headingFont;
+    font-weight: 700;
+    width: 100%;
+    border: 2px solid $veryDarkerBlue;
+    padding: 0.875rem 5.125rem;
+    margin: 2rem 0 4rem 0;
+
+    @include breakpoints-up(med) {
+      width: 10rem;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+  }
+}

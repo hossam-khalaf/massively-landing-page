@@ -1,12 +1,11 @@
 .hero {
   position: relative;
   background-image: linear-gradient(rgba(21, 29, 41, 0.848), rgb(23, 26, 31)), url(../../img/bg.jpg);
-  min-height: 90vh;
+  min-height: 100vh;
   background-size: 350% 180%;
   background-position: top center;
 
   @include breakpoints-up(med) {
-    min-height: 100vh;
     background-size: cover;
   }
 
@@ -52,7 +51,7 @@
         // justify-content: space-between;
         align-items: center;
         background-color: transparent;
-
+        box-shadow: none;
       }
     }
 
@@ -208,6 +207,11 @@
       font-family: $bodyFont;
       line-height: 2;
       color: $white;
+      text-align: center;
+
+      @include breakpoints-up(lg) {
+        padding: 0 10rem;
+      }
 
       a {
         color: $white;
