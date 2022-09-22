@@ -14,10 +14,13 @@
     width: 100%;
     border-top: 1px solid $lightGray;
 
+
+
     h2 {
       font-size: clamp($font-medium, 7vw, $font-xxlarge);
       text-transform: uppercase;
       margin-top: 1.813rem;
+      margin-bottom: 1.813rem;
       color: $veryDarkerBlue;
     }
 
@@ -25,15 +28,21 @@
       line-height: 2;
       margin: 1.563rem 0;
       font-family: $bodyFont;
+      word-spacing: 5px;
+      text-align: left;
 
       @include breakpoints-up(lg) {
-        padding: 0 6rem;
+        padding: 0 0rem;
       }
     }
 
     img {
       display: block;
       width: 100%;
+    }
+
+    .btn {
+      margin-top: 1rem;
     }
   }
 }
