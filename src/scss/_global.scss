@@ -16,6 +16,7 @@ body {
   font-family: $bodyFont;
   font-size: $font-medium;
   background-color: $white;
+  overflow-x: hidden;
 
   @include breakpoints-up(med) {
     background: linear-gradient(rgba(21, 29, 41, 0.848), rgb(7, 7, 8));
@@ -71,6 +72,7 @@ a {
 .btn {
   display: inline-block;
   text-decoration: none;
+  text-align: center;
   text-transform: uppercase;
   font-family: $headingFont;
   font-weight: 700;
@@ -91,5 +93,17 @@ a {
     width: 10rem;
     padding: 1rem 2rem;
     text-align: center;
+  }
+}
+
+.date {
+  display: block;
+  margin: 0 auto;
+  padding-top: 2.063rem;
+  position: relative;
+  width: 40vw;
+
+  @include breakpoints-up(med) {
+    width: 400px;
   }
 }

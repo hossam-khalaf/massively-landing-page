@@ -1,0 +1,39 @@
+.blog {
+  background-color: $white;
+  display: grid;
+  grid-template-columns: repeat(1fr);
+
+  @include breakpoints-up(lg) {
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+  &__blogpost {
+    color: $veryDarkerBlue;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid $lightGray;
+
+    h2 {
+      font-size: clamp($font-medium, 7vw, $font-xxlarge);
+      text-transform: uppercase;
+      margin-top: 1.813rem;
+      color: $veryDarkerBlue;
+    }
+
+    p {
+      line-height: 2;
+      margin: 1.563rem 0;
+      font-family: $bodyFont;
+
+      @include breakpoints-up(lg) {
+        padding: 0 6rem;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}

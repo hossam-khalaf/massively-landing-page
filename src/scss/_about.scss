@@ -8,11 +8,6 @@
   }
 
   .date {
-    display: block;
-    margin: 0 auto;
-    padding-top: 2.063rem;
-    position: relative;
-    width: 400px;
 
     @include breakpoints-up(med) {
       padding-top: 4rem;
@@ -22,8 +17,8 @@
       content: '';
       position: absolute;
       top: 2.5rem;
-      left: 1rem;
-      width: 5rem;
+      left: -8vw;
+      width: 10vw;
       height: 2px;
       background: $lightGray;
 
@@ -37,8 +32,8 @@
       content: '';
       position: absolute;
       top: 2.5rem;
-      right: 1rem;
-      width: 5rem;
+      right: -8vw;
+      width: 10vw;
       height: 2px;
       background: $lightGray;
 
