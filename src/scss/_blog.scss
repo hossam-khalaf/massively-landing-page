@@ -4,15 +4,24 @@
   grid-template-columns: repeat(1fr);
 
   @include breakpoints-up(lg) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(500px, 2fr));
 
   }
 
   &__blogpost {
     color: $veryDarkerBlue;
     text-align: center;
-    width: 100%;
+    // width: 100%;
     border-top: 1px solid $lightGray;
+    border-bottom: 1px solid $lightGray;
+
+    @include breakpoints-up(med) {
+      padding: 0 2vw;
+
+      &:nth-child(odd) {
+        border-right: 2px solid $lightGray;
+      }
+    }
 
 
 
@@ -22,6 +31,10 @@
       margin-top: 1.813rem;
       margin-bottom: 1.813rem;
       color: $veryDarkerBlue;
+
+      @include breakpoints-up(med) {
+        font-size: clamp($font-medium, 3vw, $font-xxlarge);
+      }
     }
 
     p {
