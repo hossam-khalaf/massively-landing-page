@@ -1,0 +1,27 @@
+footer {
+  background: rgb(7, 7, 8);
+  color: $gray;
+  text-transform: uppercase;
+  font-family: $headingFont;
+  font-weight: bolder;
+  padding: 5rem 4rem;
+  text-align: center;
+
+  span {
+    display: block;
+    margin-bottom: 1rem;
+
+    @include breakpoints-up(med) {
+      display: inline-block;
+      padding: 0 2rem 0rem 2rem;
+
+      &:not(:last-child) {
+        border-right: 2px solid $gray;
+      }
+    }
+
+    a {
+      color: $gray;
+    }
+  }
+}
