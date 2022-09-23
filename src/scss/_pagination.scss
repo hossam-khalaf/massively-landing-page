@@ -1,0 +1,41 @@
+.pagination {
+  background-color: $white;
+  color: $veryDarkerBlue;
+  font-family: $headingFont;
+
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    display: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid $lightGray;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+      color: $white;
+      background-color: $veryDarkerBlue;
+    }
+  }
+
+  .active {
+    background-color: $veryDarkerBlue;
+    color: $white;
+  }
+
+  .next {
+    display: inline-block
+  }
+
+
+  @include breakpoints-up(med) {
+
+    span {
+      display: inline-block;
+    }
+  }
+}
